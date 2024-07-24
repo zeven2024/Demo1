@@ -1,0 +1,46 @@
+y+=ply;
+ply+=1;
+if(y>=1730){
+	ply=0;
+	boo=0;
+}else{
+	sprite_index=Sprite9;
+}
+if(keyboard_check(ord("W"))&&boo=0){
+	boo=1;
+	sprite_index=Sprite9;
+	ply=-30;
+}else if(keyboard_check(ord("D"))){
+	image_xscale=1;
+	if(keyboard_check(vk_shift)){
+		x+=(a*1.5);
+		if(sprite_index!=Sprite5&&(sprite_index!=Sprite9||y>=1730)){
+			sprite_index=Sprite5;
+		}
+	}else{
+		x+=a;
+		if(sprite_index!=Sprite6&&(sprite_index!=Sprite9||y>=1730)){
+			sprite_index=Sprite6;
+		}
+	}
+}else if(keyboard_check(ord("A"))){
+	image_xscale=-1;
+	if(keyboard_check(vk_shift)){
+		x-=(a*1.5);
+		if(sprite_index!=Sprite5&&(sprite_index!=Sprite9||y>=1730)){
+			sprite_index=Sprite5;
+		}
+	}else{
+		x-=a;
+		if(sprite_index!=Sprite6&&(sprite_index!=Sprite9||y>=1730)){
+			sprite_index=Sprite6;
+		}
+	}
+}else if(y>=1730){
+	sprite_index=Sprite7;
+}
+if(place_meeting(x,y,qian)){
+	sum++;
+	x=600;
+	y=1750;
+}
